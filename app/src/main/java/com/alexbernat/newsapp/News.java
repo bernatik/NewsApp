@@ -5,23 +5,23 @@ package com.alexbernat.newsapp;
  */
 
 public class News {
-    private String mTitle, mSection, mDate;
+    private String title, section, date;
 
     public News(String section, String title, String date){
-        mTitle = title;
-        mSection = section;
-        mDate = date;
+        this.title = title;
+        this.section = section;
+        this.date = date;
     }
 
-    public String getmDate() {
-        return mDate;
+    public String getDate() {
+        return date;
     }
 
-    public String getmSection() {
-        return mSection;
+    public String getSection() {
+        return section;
     }
 
-    public String getmTitle() {
-        return mTitle;
+    public String getTitle() {
+        return title;
     }
 }
