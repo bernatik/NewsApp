@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">News App</string>
+
+    <string name="section_label">Section</string>
+    <string name="title_label">The title of the nice news</string>
+    <string name="date_label">2016-09-25T10:00:31Z</string>
+
 </resources>
