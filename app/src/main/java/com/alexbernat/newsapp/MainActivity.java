@@ -8,7 +8,6 @@ import android.content.Loader;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -37,8 +36,6 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
         LoaderManager loaderManager = getLoaderManager();
         loaderManager.initLoader(LOADER_NEWS_ID, null, this);
-        Log.v(LOG_TAG, "inside onCreate. let's see if i am here");
-
     }
 
     @Override
@@ -47,7 +44,6 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         if (id == LOADER_NEWS_ID){
             loader = new NewsLoader(this);
         }
-        Log.v(LOG_TAG, "inside onCreateLoader. let's see id: " + id);
         return loader;
     }
 
@@ -56,7 +52,6 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         if (data == null) {
             emptyListTextView.setText(R.string.text_when_list_is_empty);
         }
-        Log.v(LOG_TAG, "inside onLoadFinished. let's see data: " + data);
         newsAdapter = new NewsAdapter(this, data);
         mainListView.setAdapter(newsAdapter);
         mainListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -90,7 +85,6 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
         @Override
         public List<News> loadInBackground() {
-            Log.v(LOG_TAG, "inside loadInBackground. let's see if i am here");
             NewsParser parser = new NewsParser();
             List<News> newsList;
             try {
