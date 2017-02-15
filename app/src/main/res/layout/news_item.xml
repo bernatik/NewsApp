@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         android:textAllCaps="true"
         android:background="@drawable/oval_section"
+        android:maxLength="25"
         tools:text="@string/section_label" />
 
     <TextView
@@ -31,6 +32,5 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_marginBottom="4dp"
         tools:text="@string/title_label" />
-
 
 </RelativeLayout>

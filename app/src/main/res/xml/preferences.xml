@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <EditTextPreference
+        android:key="@string/pref_query_key"
+        android:title="@string/pref_query_title"
+        android:defaultValue="@string/pref_query_default"
+        android:maxLength="20"
+        android:inputType="text" />
+</PreferenceScreen>

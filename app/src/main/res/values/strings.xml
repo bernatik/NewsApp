@@ -6,4 +6,11 @@
     <string name="date_label">2016-09-25T10:00:31Z</string>
 
     <string name="text_when_list_is_empty">Data not found.</string>
+
+    <string name="settings_activity_label">Settings</string>
+
+    <string name="pref_query_key" translatable="false">key word</string>
+    <string name="pref_query_title" translatable="false">Find news by following key word</string>
+    <string name="pref_query_default" translatable="false">debates</string>
+
 </resources>
