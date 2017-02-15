@@ -3,10 +3,14 @@ package com.alexbernat.newsapp;
 import android.app.LoaderManager;
 import android.content.AsyncTaskLoader;
 import android.content.Context;
+import android.content.Intent;
 import android.content.Loader;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -35,7 +39,6 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         loaderManager.initLoader(LOADER_NEWS_ID, null, this);
         Log.v(LOG_TAG, "inside onCreate. let's see if i am here");
 
-
     }
 
     @Override
@@ -49,13 +52,23 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     }
 
     @Override
-    public void onLoadFinished(Loader<List<News>> loader, List<News> data) {
+    public void onLoadFinished(Loader<List<News>> loader, final List<News> data) {
         if (data == null) {
             emptyListTextView.setText(R.string.text_when_list_is_empty);
         }
         Log.v(LOG_TAG, "inside onLoadFinished. let's see data: " + data);
         newsAdapter = new NewsAdapter(this, data);
         mainListView.setAdapter(newsAdapter);
+        mainListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                News currentNews = data.get(position);
+                String link = currentNews.getLink();
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse(link));
+                startActivity(intent);
+            }
+        });
 
     }
 

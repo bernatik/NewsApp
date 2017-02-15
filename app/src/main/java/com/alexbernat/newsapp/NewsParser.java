@@ -44,7 +44,8 @@ public class NewsParser {
                 String section = current.getString("sectionName");
                 String title = current.getString("webTitle");
                 String date = current.getString("webPublicationDate");
-                News news = new News(section, title,date);
+                String link = current.getString("webUrl");
+                News news = new News(section, title, date, link);
                 newsList.add(news);
             }
         } catch (JSONException e){
