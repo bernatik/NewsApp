@@ -1,14 +1,14 @@
 <resources>
     <string name="app_name">News App</string>
-
+    <!--STRINGS FOR NEWS ATTRIBUTES-->
     <string name="section_label">Section</string>
     <string name="title_label">The title of the nice news</string>
     <string name="date_label">2016-09-25T10:00:31Z</string>
-
+    <!--PLACEHOLDER FOR EMPTY LIST-->
     <string name="text_when_list_is_empty">Data not found.</string>
-
+    <!--TITLE OF SETTING ACTIVITY-->
     <string name="settings_activity_label">Settings</string>
-
+    <!--PREFERENCE FOR KEY-WORD SETTING-->
     <string name="pref_query_key" translatable="false">key word</string>
     <string name="pref_query_title" translatable="false">Find news by following key word</string>
     <string name="pref_query_default" translatable="false">debates</string>

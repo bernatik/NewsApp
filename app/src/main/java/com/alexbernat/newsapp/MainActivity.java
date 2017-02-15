@@ -23,7 +23,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<List<News>> {
 
-    final static String LINK = "https://content.guardianapis.com/search";
+    final static String LINK = "http://content.guardianapis.com/search";
     final static int LOADER_NEWS_ID = 1;
     public NewsAdapter newsAdapter;
     public TextView emptyListTextView;
@@ -70,6 +70,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
                 getString(R.string.pref_query_default));
         Uri baseUri = Uri.parse(LINK);
         Uri.Builder uriBuilder = baseUri.buildUpon();
+        uriBuilder.appendQueryParameter("order-by", "newest");
         uriBuilder.appendQueryParameter("q", keyWord);
         uriBuilder.appendQueryParameter("api-key", "test");
 
